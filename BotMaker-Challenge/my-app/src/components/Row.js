@@ -72,11 +72,11 @@ class Row extends React.Component {
                     onChange={(e)=>{this.setState({apellido: e.target.value})}} 
                     value={this.state.nacimiento}
                 />}</td>
-            <td><button onClick={()=>{this.props.borrar(this.state.mail)}}>❌</button></td>
+            <td><button onClick={()=>{this.props.borrar(this.state.mail)}}><span>❌</span></button></td>
             <td>
                 <button onClick={()=>{
                     this.setState({editar:true});
-                }}>✏️</button>
+                }}><span>✏️</span></button>
             </td>
             <td><button onClick={()=>{
                 this.props.editar(
@@ -87,7 +87,7 @@ class Row extends React.Component {
                     this.state.nacimiento
                 );
                 this.setState({editar:false});
-            }}>💾</button></td>
+            }}><span>💾</span></button></td>
        </tr>
       )
     }
