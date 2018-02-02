@@ -32,7 +32,7 @@ const List=({ usuarios, borrar })=>(
       </tr>
       {
         usuarios.map((usuario)=>( 
-          <Row usuario={usuario}></Row>
+          <Row usuario={usuario} key={usuario.mail}    ></Row>
         ))
       }
       </tbody>

@@ -27,6 +27,7 @@ const initialState = {
 };
 
 function appReducer(state = initialState, action) {
+  console.log(action)
   switch(action.type) {
     case AGREGAR_USUARIO:
       return Object.assign({},state,{
