@@ -14,14 +14,14 @@ const initialState = {
     apellido:"Rodriguez",
     mail:"ewelynda@gmail.com",
     password:"79797897",
-    nacimiento:"1987-02-04", 
+    nacimiento:"2014-02-04", 
   },
   {
-    nombre: "Eugenia",
+    nombre: "Hernan",
     apellido:"Rodriguez",
-    mail:"ewelyn@gmail.com",
+    mail:"hernan@gmail.com",
     password:"79797897",
-    nacimiento:"2018-02-16", 
+    nacimiento:"1986-02-16", 
   }
   ],  
 };
