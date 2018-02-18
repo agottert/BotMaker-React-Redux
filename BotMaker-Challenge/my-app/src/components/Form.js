@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch) => {
 class Form extends React.Component {
   constructor(props){
     super(props);
-    this.state={
+    this.state={ //state inicial del componente
       nombre:'', 
       apellido: '',
       mail: '', 
@@ -31,7 +31,11 @@ class Form extends React.Component {
         <input 
           type="text" 
           placeholder="Nombre" 
-          onChange={(e)=>{this.setState({nombre: e.target.value})}} 
+          onChange={
+            (e) => {
+              this.setState({nombre: e.target.value})
+            }
+          } 
           value={this.state.nombre}
         />
         <input type="text" placeholder="Apellido"
