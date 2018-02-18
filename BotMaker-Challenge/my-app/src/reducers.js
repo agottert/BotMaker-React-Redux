@@ -44,28 +44,31 @@ function appReducer(state = initialState, action) {
       });
     case EDITAR_USUARIO:
       return Object.assign({}, state, {
-        usuarios: state.usuarios.map((usuario) => {
-          if (usuario.mail === action.mail) {
-            return {
-              nombre:action.nombre,
-              apellido:action.apellido, 
-              mail:action.mail, 
-              password:action.password, 
-              nacimiento:action.nacimiento
+        usuarios: state.usuarios.map(
+          (usuario) => {
+            if (usuario.mail === action.mail) {
+              return {
+                nombre: action.nombre,
+                apellido: action.apellido, 
+                mail: action.mail, 
+                password: action.password, 
+                nacimiento: action.nacimiento
               }
-            
             // Es el usuario a editar
             } else {
-            return usuario
-            // Es cualquier otro usuario
+              return usuario
+              // Es cualquier otro usuario
+            }
           }
-        })
+        )
       });
     case BORRAR_USUARIO:
       return Object.assign({},state,{
-        usuarios: state.usuarios.filter((usuario)=>{
-          return usuario.mail !== action.mail;
-        })
+        usuarios: state.usuarios.filter(
+          (usuario) => {
+            return usuario.mail !== action.mail;
+          }
+        )
       });
     default: return state;
   }

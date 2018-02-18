@@ -9,7 +9,7 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    editar: (nombre, apellido, mail, password, nacimiento) => {
+    guardar: (nombre, apellido, mail, password, nacimiento) => {
       dispatch(editarUsuario(nombre, apellido, mail, password, nacimiento))
 
     },
@@ -35,7 +35,10 @@ class Row extends React.Component {
       return (
         <tr>
             <td>
-                { !this.state.editar && this.state.nombre}
+                {
+                    // es como un else
+                    !this.state.editar && this.state.nombre
+                } 
                 { this.state.editar && <input 
                     type="text" 
                     placeholder="Nombre" 
@@ -72,14 +75,16 @@ class Row extends React.Component {
                     onChange={(e)=>{this.setState({apellido: e.target.value})}} 
                     value={this.state.nacimiento}
                 />}</td>
-            <td><button onClick={()=>{this.props.borrar(this.state.mail)}}><span>❌</span></button></td>
+            <td>
+                <button onClick={()=>{this.props.borrar(this.state.mail)}}>
+                <span>❌</span></button></td>
             <td>
                 <button onClick={()=>{
                     this.setState({editar:true});
                 }}><span>✏️</span></button>
             </td>
             <td><button onClick={()=>{
-                this.props.editar(
+                this.props.guardar(
                     this.state.nombre, 
                     this.state.apellido, 
                     this.state.mail, 

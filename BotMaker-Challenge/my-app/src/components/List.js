@@ -10,13 +10,10 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    borrar: (mail) => {
-      dispatch(borrarUsuario(mail))
-    }
   }
 }  
 
-const List=({ usuarios, borrar })=>(
+const List=({ usuarios })=>(
     
     <table className="list">
      <tbody>   
@@ -31,9 +28,11 @@ const List=({ usuarios, borrar })=>(
         <th></th>
       </tr>
       {
-        usuarios.map((usuario)=>( 
-          <Row usuario={usuario} key={usuario.mail}    ></Row>
-        ))
+        usuarios.map(
+          (usuario) => ( 
+            <Row usuario={usuario} key={usuario.mail}></Row>
+          )
+        )
       }
       </tbody>
     </table>
